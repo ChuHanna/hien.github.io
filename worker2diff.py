@@ -19,7 +19,7 @@ def main():
         ch.basic_ack(delivery_tag = method.delivery_tag)
 
     # lay mess ve
-    channel.basic_consume(queue='diff', on_message_callback=callback, )
+    channel.basic_consume(queue='diff', on_message_callback=callback)
 
     print(' [*] Waiting for messages. To exit press CTRL+C')
 
