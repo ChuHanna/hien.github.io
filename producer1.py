@@ -9,7 +9,7 @@ channel.queue_declare(queue='diff', durable=True)
 channel.queue_declare(queue='mul', durable=True)
 channel.queue_declare(queue='div', durable=True)
 
-#khai bao exchange direct log, type = direct
+# khai bao exchange direct log, type = direct
 channel.exchange_declare(exchange='direct_logs',
                          exchange_type='direct')
 
@@ -18,12 +18,12 @@ channel.queue_bind(exchange='direct_logs', queue='total')
 channel.queue_bind(exchange='direct_logs', queue='diff')
 channel.queue_bind(exchange='direct_logs', queue='mul')
 channel.queue_bind(exchange='direct_logs', queue='div')
-a = int( input())
-b = int( input())
+a = int(input())
+b = int(input())
 dau = input()
 mess = '|'.join([str(a), str(b)])
 
-routing_key=''
+routing_key = ' '
 
 if dau == '+':
     routing_key = 'total'
@@ -34,8 +34,6 @@ elif dau == '*':
 elif dau == '/':
     routing_key = 'div'
 
-channel.basic_publish(exchange='direct_logs',
-                    routing_key=routing_key,
-                    body=mess)
-print( "[x] Sent a = ",a,", b = " ,b, "\n operator = ",dau)
+channel.basic_publish(exchange='direct_logs', routing_key=routing_key, body=mess)
+print("[x] Sent a = ", a,", b = ", b, "\n operator = ", dau)
 connection.close()
