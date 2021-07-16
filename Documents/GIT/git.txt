@@ -1,0 +1,14 @@
+BASIC
+1. new branch
+git checkout 
+git checkout -b <tên nhánh mới>
+khi thực hiện git checkout trên nhánh nào, thì nhánh mới giống hoàn toàn nhánh đó. Tham số -b trong checkout để tạo  mới 1 nhánh
+
+2. liệt kê danh sách 1 branch
+git branch
+note: nhánh có dấu * là nhánh đang đứng
+
+3. Chuyển đổi qua lại giữa các branch
+git checkout <tên branch>
+
+
